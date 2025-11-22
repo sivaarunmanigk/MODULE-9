@@ -34,9 +34,37 @@ To develop a Python class with functions to:
 ---
 
 ## 💻 PROGRAM:
+~~~c
+class InsertionSorter:
+    def __init__(self):
+        self.numbers = []
+    def input_numbers(self):
+        user_input = input("Enter numbers separated by spaces: ")
+        try:
+            self.numbers = list(map(int, user_input.strip().split()))
+        except ValueError:
+            print("❌ Please enter valid integers.")
+            exit()
+    def insertion_sort(self):
+        for i in range(1, len(self.numbers)):
+            key = self.numbers[i]
+            j = i - 1
+            while j >= 0 and self.numbers[j] > key:
+                self.numbers[j + 1] = self.numbers[j]
+                j -= 1
+            self.numbers[j + 1] = key
+    def display_sorted_list(self):
+        print("✅ Sorted list:", self.numbers)
+sorter = InsertionSorter()
+sorter.input_numbers()
+sorter.insertion_sort()
+sorter.display_sorted_list()
+~~~
 
-ADD CODE HERE
 
 ## OUTPUT:
+![image](https://github.com/user-attachments/assets/e1c97dc7-498d-4646-a310-b766cb7a189a)
+
 
 ## RESULT:
+Thus the program has been executed successfully.
